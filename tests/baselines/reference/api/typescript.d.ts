@@ -5297,9 +5297,10 @@ declare namespace ts {
         /**
          * true when the current location also allows for a new identifier
          */
-        isNewIdentifierLocation: boolean;
+        isNewIdentifierLocation: IsNewIdentifierLocation;
         entries: CompletionEntry[];
     }
+    type IsNewIdentifierLocation = boolean | "arrow-head";
     interface CompletionEntry {
         name: string;
         kind: ScriptElementKind;

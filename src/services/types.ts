@@ -843,9 +843,13 @@ namespace ts {
         /**
          * true when the current location also allows for a new identifier
          */
-        isNewIdentifierLocation: boolean;
+        //doc
+        isNewIdentifierLocation: IsNewIdentifierLocation;
         entries: CompletionEntry[];
     }
+
+    //!
+    export type IsNewIdentifierLocation = boolean | "arrow-head";
 
     // see comments in protocol.ts
     export interface CompletionEntry {

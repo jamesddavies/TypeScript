@@ -5297,9 +5297,10 @@ declare namespace ts {
         /**
          * true when the current location also allows for a new identifier
          */
-        isNewIdentifierLocation: boolean;
+        isNewIdentifierLocation: IsNewIdentifierLocation;
         entries: CompletionEntry[];
     }
+    type IsNewIdentifierLocation = boolean | "arrow-head";
     interface CompletionEntry {
         name: string;
         kind: ScriptElementKind;
@@ -7266,7 +7267,7 @@ declare namespace ts.server.protocol {
     interface CompletionInfo {
         readonly isGlobalCompletion: boolean;
         readonly isMemberCompletion: boolean;
-        readonly isNewIdentifierLocation: boolean;
+        readonly isNewIdentifierLocation: boolean | "arrow-head";
         readonly entries: ReadonlyArray<CompletionEntry>;
     }
     interface CompletionDetailsResponse extends Response {
