@@ -608,7 +608,7 @@ declare namespace FourSlashInterface {
     export interface VerifyCodeFixAvailableOptions {
         readonly description: string;
         readonly actions?: ReadonlyArray<{ readonly type: string, readonly data: {} }>;
-        readonly commands?: ReadonlyArray<{}?;
+        readonly commands?: ReadonlyArray<{}>;
     }
 
     interface VerifyNavigateToOptions {
@@ -644,3 +644,7 @@ declare var debug: FourSlashInterface.debug;
 declare var format: FourSlashInterface.format;
 declare var cancellation: FourSlashInterface.cancellation;
 declare var classification: typeof FourSlashInterface.classification;
+declare module completion {
+    export const keywords: ReadonlyArray<string>;
+    export const typeKeywords: ReadonlyArray<string>;
+}
